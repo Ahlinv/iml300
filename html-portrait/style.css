@@ -1,5 +1,7 @@
 body {
-  background-image: url("assets/sky.gif");
+  font-family: "Isometra", serif;
+  /*background-image: url("assets/sky.gif"); */
+  background-color: thistle;
   background-size: cover;
   height: 100vh;
 }
@@ -10,12 +12,14 @@ img {
   padding: 10px;
   transition: 1s;
   filter: grayscale(100%);
+  opacity:0.3;
   /*      border: 3px solid blue; */
 }
 
 img:hover {
   height: 400px;
   filter: grayscale(0%);
+  opacity:1;
   /*   border: 1px solid red; */
 }
 
