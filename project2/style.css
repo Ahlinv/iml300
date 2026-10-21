@@ -8,35 +8,40 @@ body{
   display: flex;
   flex-direction: column;    /* Stacks text perfectly above the button */
   align-items: flex-end;     /* Aligns both text and button to the far right */
-  gap: 12px;                  /* Clean, even space between text and button */
+  gap: 15px;                  /* Clean, even space between text and button */
 }
 
 /* 2. Text label styling */
 .button-label {
-  font-size: 16px;           
+  font-size: 30px;           
   color: #333333;            /* Crisp dark gray text */
-  font-family: sans-serif;
+  font-family: 'times new roman';
+  background-color: #f0f0f0; /* Crisp, light gray background fill */
+  padding: 10px 18px;  
 }
 
 /* 3. The Standard Box Button */
 .custom-box-button {
   padding: 16px 36px;        /* Generous internal spacing */
-  font-size: 20px;           
+  font-size: 13px;           
   font-weight: 600;
   color: #333333;            /* Text color inside the button */
   background-color: #f0f0f0; /* Crisp, light gray background fill */
   border: 1px solid #ccc;    /* Clean, thin outline border */
   border-radius: 4px;        /* Softly rounded corners */
   cursor: pointer;           /* Clicking hand cursor icon */
-  
+  opacity:0%;
   /* Smooth transition animation for hover states */
   transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
 }
 
-/* 4. Flawless Hover Effect (Only works exactly inside the box boundary!) */
+
 .custom-box-button:hover {
-  background-color: #e2e2e2; /* Smoothly darkens the background on hover */
+  transform: scale(1.23);
+  background-color: #ffffff; /* Smoothly darkens the background on hover */
   border-color: #b5b5b5;     /* Darkens the border line for visual depth */
+  opacity:100%;
+  color : blue;
 }
 
 .custom-box-button:active {
