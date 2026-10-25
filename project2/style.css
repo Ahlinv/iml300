@@ -1,8 +1,49 @@
 body{
-    background-color: #bdcedc;
+    background-color:black;
     background-size: cover;
 }
+.myCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none; /* Allows users to click buttons or select text on top of it */
+}
 
+.centerText{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;              /* Fills the full width of the screen */
+  height: 100vh;
+  flex-direction: column;    /* Stacks text perfectly above the button */
+  text-align:center;
+  z-index: 1;
+}
+.text-wrapper h1 {
+  margin: 0 0 30px 0;        /* Strips native margins and adds 10px padding below the header */
+   font-size: 10vw;
+  color:#5ea0ff;
+}
+
+.text-wrapper p {
+  margin: 0 0 10px 0;;                 /* Resets default browser text layout spacing */
+  font-size: 18px;
+  color:#5ea0ff;/* Sets font size crisp for a description */
+}
+
+.text-wrapper a{
+  color:#5ea0ff;  
+}
+
+.eventText{
+  font-size:2vw;
+  margin: 5px 5px 10px 5px;;
+  color:#5ea0ff;
+  background-color: #2b2d30
+}
 
 .button-container {
   display: flex;
@@ -13,35 +54,41 @@ body{
 
 /* 2. Text label styling */
 .button-label {
-  font-size: 30px;           
-  color: #333333;            /* Crisp dark gray text */
+  filter: blur(7px);
+  font-size: 3vw;           
+  color: #5ea0ff;            /* Crisp dark gray text */
   font-family: 'times new roman';
-  background-color: #f0f0f0; /* Crisp, light gray background fill */
+  background-color: #2b2d30; /* Crisp, light gray background fill */
   padding: 10px 18px;  
+}
+
+.button-label:hover{
+  filter: none;  
+  transition:  filter 0.2s ease;
 }
 
 /* 3. The Standard Box Button */
 .custom-box-button {
   padding: 16px 36px;        /* Generous internal spacing */
-  font-size: 13px;           
+  font-size: 1vw;           
   font-weight: 600;
   color: #333333;            /* Text color inside the button */
-  background-color: #f0f0f0; /* Crisp, light gray background fill */
+  background-color: #5ea0ff; /* Crisp, light gray background fill */
   border: 1px solid #ccc;    /* Clean, thin outline border */
   border-radius: 4px;        /* Softly rounded corners */
   cursor: pointer;           /* Clicking hand cursor icon */
   opacity:0%;
   /* Smooth transition animation for hover states */
-  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.1s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 
 .custom-box-button:hover {
   transform: scale(1.23);
-  background-color: #ffffff; /* Smoothly darkens the background on hover */
-  border-color: #b5b5b5;     /* Darkens the border line for visual depth */
+  background-color: #5ea0ff; /* Smoothly darkens the background on hover */
+  border-color: #5ea0ff;     /* Darkens the border line for visual depth */
   opacity:100%;
-  color : blue;
+  color:#2b3037;
 }
 
 .custom-box-button:active {
