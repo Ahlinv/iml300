@@ -45,6 +45,43 @@ body{
   background-color: #2b2d30
 }
 
+ .timer-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+  display: block !important; /* Forces the box to render */
+  opacity: 1 !important;     /* Overrides any accidental 0% opacity from buttons */
+  z-index: 10;               /* Lifts it above your background canvas */
+}
+  .clock-svg {
+    transform: rotate(-90deg); /* Rotates the circle so the countdown starts at 12 o'clock */
+    width: 100%;
+    height: 100%;
+  }
+  .clock-bg {
+    fill: none;
+    stroke: #e6e6e6;
+    stroke-width: 6;
+  }
+  .clock-ring {
+    fill: none;
+    stroke: #5ea0ff; /* Clock color (red) */
+    stroke-width: 6;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s linear; /* Smooth ticking transition */
+  }
+  .timer-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #d7e4ff;
+  }
+
 .button-container {
   display: flex;
   flex-direction: column;    /* Stacks text perfectly above the button */
@@ -94,4 +131,7 @@ body{
 .custom-box-button:active {
   transform: scale(0.98);    /* Slightly shrinks when clicked to look responsive */
 }
+
+
+ 
 

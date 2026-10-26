@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../style.css"/>
         <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
         <script src="../jsFile/procras2.js"></script>
+        <script src="../jsFile/timer.js"></script>
     </head>
     <body>
         <div class="eventText">
@@ -20,6 +21,22 @@
             <span class="button-label">Push it through↓</span>
     <a href="page4.html" button class="custom-box-button">You have to finish it in time, right?</a>
 </div>
+        
+    <div class="timer-container">
+  <!-- Circular SVG Progress Indicator -->
+  <svg class="clock-svg" viewBox="0 0 100 100">
+    <!-- Background circle -->
+    <circle class="clock-bg" cx="50" cy="50" r="45"></circle>
+    <!-- Animated countdown ring -->
+    <circle class="clock-ring" id="progress-ring" cx="50" cy="50" r="45"></circle>
+  </svg>
+  <!-- Text inside the clock -->
+  <div id="countdown-text" class="timer-text">Loading...</div>
+</div>
+
+
+
+
     <ul>
          <li><a href="page2.html">go to the next page?</a></li>
         <li><a href="index.html">go back?</a></li>
