@@ -4,6 +4,9 @@
         <meta charset="UTF-8" />
         <title>The branching path</title>
         <link rel="stylesheet" href="../style.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
+        <script src="../jsFile/procras2.js"></script>
+        <script src="../jsFile/timer.js"></script>
     </head>
     <body>
         <div>
@@ -13,6 +16,17 @@
          <li><a href="page3.html">go to the next page?</a></li>
         <li><a href="page1.html">go back?</a></li>
         </ul>
+        <div class="timer-container">
+  <!-- Circular SVG Progress Indicator -->
+  <svg class="clock-svg" viewBox="0 0 100 100">
+    <!-- Background circle -->
+    <circle class="clock-bg" cx="50" cy="50" r="45"></circle>
+    <!-- Animated countdown ring -->
+    <circle class="clock-ring" id="progress-ring" cx="50" cy="50" r="45"></circle>
+  </svg>
+  <!-- Text inside the clock -->
+  <div id="countdown-text" class="timer-text">Loading...</div>
+</div>
     
     </body>
 </html>
