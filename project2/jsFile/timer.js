@@ -36,7 +36,7 @@ function initVisualTimer() {
       
   
  
-    window.location.href = "index.html"; 
+    window.location.href = "page5_1.html"; 
  
       return;
     }

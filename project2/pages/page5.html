@@ -2,16 +2,28 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>The end</title>
+        <title>The beginning</title>
         <link rel="stylesheet" href="../style.css"/>
+        <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
+        <script src="../jsFile/procras1.js"></script>
+        <script>
+  // Completely wipe the timer and difficulty metrics instantly
+  localStorage.removeItem("shared_timer_end_time");
+  localStorage.setItem("game_difficulty", "3"); 
+</script>
     </head>
+    
     <body>
-        <div>
-            <H1>Currently in progress! You are in the last page!</H1>
+        <div class="centerText">
+            <div class="text-wrapper">
+                <h1>You finished the project in time!</h1>
+                <p>Let's hope you get an A for this</p>
+                
+            <a href="index.html">-click here to go back to home page-</a>
+        
+            </div>
         </div>
-        <ul>
-        <li><a href="page1.html">go back?</a></li>
-        </ul>
+        
     
     </body>
 </html>
