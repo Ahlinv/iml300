@@ -1,5 +1,5 @@
 
-const DURATION_SECONDS = 300; // 5 minutes
+const DURATION_SECONDS = 120; 
 const STORAGE_KEY = "shared_timer_end_time";
 
 function initVisualTimer() {
@@ -33,6 +33,11 @@ function initVisualTimer() {
       textDisplay.textContent = "00:00";
       ring.style.strokeDashoffset = circumference;
       localStorage.removeItem(STORAGE_KEY);
+      
+  
+ 
+    window.location.href = "index.html"; 
+ 
       return;
     }
 

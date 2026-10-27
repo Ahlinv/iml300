@@ -1,7 +1,15 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 body{
     background-color:black;
     background-size: cover;
+   opacity: 1;
+  animation: fadeIn 0.4s ease-in-out forwards;
+   transition: opacity 0.5s ease-in-out;
 }
+
 .myCanvas {
   position: fixed;
   top: 0;
@@ -130,6 +138,11 @@ body{
 
 .custom-box-button:active {
   transform: scale(0.98);    /* Slightly shrinks when clicked to look responsive */
+}
+
+.page-fade-out {
+  opacity: 0;
+  pointer-events: none; /* Prevents users from clicking things during transition */
 }
 
 
