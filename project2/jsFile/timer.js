@@ -6,23 +6,22 @@ function initVisualTimer() {
   const textDisplay = document.getElementById("countdown-text");
   const ring = document.getElementById("progress-ring");
   
-  // FIX: Safely exit if elements don't exist on this specific HTML page
-  if (!textDisplay || !ring) {
-    console.warn("Timer elements not found on this page.");
-    return;
-  }
-  
-  // Calculate the circle circumference (2 * pi * r) where r = 45
+  if (!textDisplay || !ring) return; // Prevents errors if elements aren't loaded
+
   const circumference = 2 * Math.PI * 45;
   ring.style.strokeDasharray = circumference;
 
-  let endTime = localStorage.getItem(STORAGE_KEY);
+  let endTime;
+  let interval;
 
-  if (!endTime) {
-    endTime = Date.now() + (DURATION_SECONDS * 1000);
-    localStorage.setItem(STORAGE_KEY, endTime);
-  } else {
-    endTime = parseInt(endTime, 10);
+  function loadEndTime() {
+    let stored = localStorage.getItem(STORAGE_KEY);
+    if (!stored) {
+      endTime = Date.now() + (DURATION_SECONDS * 1000);
+      localStorage.setItem(STORAGE_KEY, endTime);
+    } else {
+      endTime = parseInt(stored, 10);
+    }
   }
 
   function updateClock() {
@@ -32,28 +31,36 @@ function initVisualTimer() {
     if (timeLeftMs <= 0) {
       clearInterval(interval);
       textDisplay.textContent = "00:00";
-      ring.style.strokeDashoffset = circumference; // Empty ring
+      ring.style.strokeDashoffset = circumference;
       localStorage.removeItem(STORAGE_KEY);
       return;
     }
 
     const totalSecondsLeft = Math.floor(timeLeftMs / 1000);
-    
-    // Update Text Display
     const minutes = Math.floor(totalSecondsLeft / 60);
     const seconds = totalSecondsLeft % 60;
-    textDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    textDisplay.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 
-    // Update Circle Visualization (Fraction of time remaining)
     const fractionRemaining = totalSecondsLeft / DURATION_SECONDS;
     const offset = circumference - (fractionRemaining * circumference);
     ring.style.strokeDashoffset = offset;
   }
 
-  // Run immediately, then every second
-  updateClock();
-  const interval = setInterval(updateClock, 1000);
+  function startTimer() {
+    clearInterval(interval);
+    loadEndTime();
+    updateClock();
+    interval = setInterval(updateClock, 1000);
+  }
+
+  // Listen for changes made to localStorage by other tabs/pages
+  window.addEventListener("storage", (e) => {
+    if (e.key === STORAGE_KEY) {
+      startTimer(); 
+    }
+  });
+
+  startTimer();
 }
 
-// Ensures HTML elements are loaded before the script interacts with them
 window.addEventListener("DOMContentLoaded", initVisualTimer);
