@@ -19,6 +19,14 @@ body{
   z-index: -1;
   pointer-events: none; /* Allows users to click buttons or select text on top of it */
 }
+.myGames{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
 
 .centerText{
   display: flex;
@@ -140,10 +148,7 @@ body{
   transform: scale(0.98);    /* Slightly shrinks when clicked to look responsive */
 }
 
-.page-fade-out {
-  opacity: 0;
-  pointer-events: none; /* Prevents users from clicking things during transition */
-}
+
 
 
  

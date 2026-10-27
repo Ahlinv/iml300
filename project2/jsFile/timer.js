@@ -66,6 +66,53 @@ function initVisualTimer() {
   });
 
   startTimer();
+  
+  // Global Interceptor: Handles all procrastination links sitewide automatically
+document.addEventListener("click", (e) => {
+  const procrastinateBtn = e.target.closest(".procrastinate-btn");
+  const recoverBtn = e.target.closest(".recover-btn");
+  
+  if (!procrastinateBtn && !recoverBtn) return;
+
+  e.preventDefault(); // Stop instant navigation
+
+ 
+    let currentEndTime = localStorage.getItem("shared_timer_end_time");
+    let currentDifficulty = parseInt(localStorage.getItem("game_difficulty")) || 3;
+
+    if (procrastinateBtn) {
+      // 1. Deduct 10 seconds (10,000 milliseconds)
+      if (currentEndTime) {
+        localStorage.setItem("shared_timer_end_time", parseInt(currentEndTime, 10) - 10000);
+      }
+
+      // 2. Scale UP difficulty to a maximum cap of 5
+      if (currentDifficulty < 5) {
+        localStorage.setItem("game_difficulty", currentDifficulty + 1);
+      } else {
+        localStorage.setItem("game_difficulty", 5); 
+      }
+      
+      // Jump dynamically to destination
+      window.location.href = procrastinateBtn.getAttribute("href");
+    } 
+    else if (recoverBtn) {
+      // 1. Deduct 20 seconds (20,000 milliseconds)
+      if (currentEndTime) {
+        localStorage.setItem("shared_timer_end_time", parseInt(currentEndTime, 10) - 20000);
+      }
+
+      // 2. Scale DOWN difficulty to a minimum floor of 1
+      if (currentDifficulty > 1) {
+        localStorage.setItem("game_difficulty", currentDifficulty - 1);
+      } else {
+        localStorage.setItem("game_difficulty", 1); 
+      }
+      
+      // Jump dynamically to destination
+      window.location.href = recoverBtn.getAttribute("href");
+    }
+  });
 }
 
 window.addEventListener("DOMContentLoaded", initVisualTimer);

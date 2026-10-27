@@ -5,18 +5,27 @@
         <title>The branching path</title>
         <link rel="stylesheet" href="../style.css"/>
         <script src="https://cdn.jsdelivr.net/npm/p5@2.3.4/lib/p5.js"></script>
-        <script src="../jsFile/procras2.js"></script>
+        <script src="../jsFile/procras2_1.js"></script>
         <script src="../jsFile/timer.js"></script>
     </head>
     <body>
-        <div>
-            <H1>Currently in progress! You are in the third page!</H1>
+        <div class="eventText">
+            <p>There are even less time now...</p>
         </div>
-        <ul>
-         <li><a href="page3.html">go to the next page?</a></li>
-        <li><a href="page1.html">go back?</a></li>
-        </ul>
-        <div class="timer-container">
+        <div class="button-container">
+  <span class="button-label">Procrastinate!↓</span>
+            
+  <!-- Button 1: Procrastinate Option (-10 seconds) -->
+<a href="page2_1.html" class="procrastinate-btn custom-box-button" button>Not like you have the power to keep going</a>
+<span class="button-label">Stop and breathe for a moment↓</span>
+
+<!-- Button 2: Recovery Option (-20 seconds) -->
+<a href="page3.html" class="recover-btn custom-box-button" button>Restore some energy can't be bad</a>
+<span class="button-label">Push it through↓</span>
+    <a href="page4.html" button class="custom-box-button">You have to finish it in time, right?</a>
+</div>
+        
+    <div class="timer-container">
   <!-- Circular SVG Progress Indicator -->
   <svg class="clock-svg" viewBox="0 0 100 100">
     <!-- Background circle -->
