@@ -153,7 +153,7 @@ function draw() {
         textFont("Times New Roman", width / 35);
         text("Decent..", random(0, width), random(0, height / 3));
       } else {
-        if (projectProgress > -100) {
+        if (projectProgress > -500) {
           projectProgress -= 5 * diffLevel;
           fill(227, 56, 20);
           textFont("Times New Roman", width / 35);
