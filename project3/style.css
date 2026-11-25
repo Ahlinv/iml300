@@ -1,0 +1,99 @@
+/* ============================================================
+   Queer Difficulty Index — style.css
+   Plain, printable look: Times New Roman, black on white.
+   Sections: base / layout / headings / links / list / entries / form
+   ============================================================ */
+
+
+/* ---------- Base ---------- */
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+
+/* ---------- Layout ---------- */
+
+main {
+  max-width: 680px;
+  padding: 16px;
+}
+
+
+/* ---------- Headings ---------- */
+
+h1 {
+  font-size: 48px;
+  font-weight: normal;
+  margin: 0 0 12px;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: normal;
+  margin-top: 28px;
+  border-bottom: 1px solid #000;
+}
+
+
+/* ---------- Links ---------- */
+
+a,
+.link {
+  color: #0000ee;
+  text-decoration: underline;
+}
+
+/* .link makes a <button> look and act like a plain text link */
+.link {
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+
+/* ---------- Entry list ---------- */
+
+ol {
+  padding-left: 28px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+/* The expandable body of one entry */
+.entry {
+  margin: 6px 0 12px;
+  padding-left: 10px;
+  border-left: 1px solid #000;
+}
+
+
+/* ---------- Submission form ---------- */
+
+input,
+textarea,
+button[type="submit"] {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid #000;
+  background: #fff;
+  color: #000;
+  font: inherit;
+}
+
+button[type="submit"] {
+  width: auto;
+  padding: 2px 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Queer Difficulty Index — an archive of cited testimony</title>
+    <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase.js"></script>
+  <meta name="description" content="An index of documented experiences of LGBTQ people facing difficulty, from scholarship and first-person posts, with citations.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main>
+    <h1>Queer Difficulty Index</h1>
+    <p>An index of documented experiences of difficulty faced by LGBTQ people. Entries are drawn from published research (summarised) and from first-person posts (quoted directly, with author and username). Each lists its source. Format after the <a href="https://cyberfeminismindex.com" target="_blank">Cyberfeminism Index</a>.</p>
+    <div id="sketch"></div>
+    <p><small>Each line is one entry. Long = scholarly source, medium = social media post, short = submitted.</small></p>
+
+    <h2>Entries (<span id="count">0</span>)</h2>
+    <ol id="list"></ol>
+
+    <h2>Add a story</h2>
+    <p><small>Submissions will be stored via Firebase. If citing a social media post, give the platform and the poster's username.</small></p>
+    <form id="story-form">
+      <p><label>Title<br><input id="f-title" required></label></p>
+      <p><label>Story<br><textarea id="f-text" rows="6" required></textarea></label></p>
+      <p><label>Name or username (optional)<br><input id="f-name"></label></p>
+      <p><label>Source (paper, or platform + @username, optional)<br><input id="f-source"></label></p>
+      <p><button type="submit">Submit to index</button></p>
+    </form>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+  <script src="../jsFile/entries.js"></script>
+  <script src="../jsFile/main.js"></script>
+  <script src="../jsFile/sketch.js"></script>
+</body>
+</html>
